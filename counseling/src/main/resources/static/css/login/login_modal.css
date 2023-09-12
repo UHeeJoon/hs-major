@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+.info-modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.625em;
+    overflow-x: hidden;
+    transition: background-color .1s;
+    -webkit-overflow-scrolling: touch;
+    align-items: center;
+    background: rgba(0,0,0,.4);
+    overflow-y: auto;
+    z-index: 10600!important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.info-modal-area {
+    width: 400px!important;
+    padding-top: 40px!important;
+    padding-bottom: 40px!important;
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    padding: 1.25em;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-animation: swal2-show .3s;
+    animation: swal2-show .3s;
+    margin: auto;
+    display: flex;
+}
+
+@keyframes swal2-show {
+    0% {
+        transform: scale(.7);
+    }
+    45% {
+        transform: scale(1.05);
+    }
+    80% {
+        transform: scale(.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.info-modal-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.8em;
+}
+
+.info-modal-title {
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 0.4em;
+    padding: 0;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    color: #303441!important;
+    font-size: 18px!important;
+    font-weight: 500!important;
+}
+
+.info-modal-icon-box {
+    display: flex;
+    animation: swal2-animate-error-icon .5s;
+    color: #f27474;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    box-sizing: content-box;
+    justify-content: center;
+    width: 5em;
+    height: 5em;
+    margin: 1.25em auto 1.875em;
+    border: 0.25em solid #f27474;
+    border-radius: 50%;
+    font-family: inherit;
+    line-height: 5em;
+    cursor: default;
+    user-select: none;
+}
+
+@keyframes swal2-animate-error-icon {
+    0% {
+        transform: rotateX(100deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0);
+        opacity: 1;
+    }
+}
+
+.info-modal-icon-body {
+    animation: swal2-animate-error-x-mark .5s;
+    position: relative;
+    flex-grow: 1;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.info-modal-icon-left {
+    left: 1.0625em;
+    transform: rotate(45deg);
+    display: block;
+    position: absolute;
+    top: 2.3125em;
+    width: 2.9375em;
+    height: 0.3125em;
+    border-radius: 0.125em;
+    background-color: #f27474;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.info-modal-icon-left-v2 {
+    left: 0.8965em;
+    transform: rotate(45deg);
+    display: block;
+    position: absolute;
+    top: 2.6125em;
+    width: 1.6375em;
+    height: 0.3125em;
+    border-radius: 0.125em;
+    background-color: blue;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.info-modal-icon-right-v2 {
+    right: 0.7589em;
+    transform: rotate(-45deg);
+    display: block;
+    position: absolute;
+    top: 2.31em;
+    width: 2.5em;
+    height: 0.3125em;
+    border-radius: 0.125em;
+    background-color: blue;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.info-modal-icon-right {
+    right: 1em;
+    transform: rotate(-45deg);
+    display: block;
+    position: absolute;
+    top: 2.3125em;
+    width: 2.9375em;
+    height: 0.3125em;
+    border-radius: 0.125em;
+    background-color: #f27474;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes swal2-animate-error-x-mark{
+    0% {
+        margin-top: 1.625em;
+        transform: scale(.4);
+        opacity: 0;
+    }
+    50% {
+        margin-top: 1.625em;
+        transform: scale(.4);
+        opacity: 0;
+    }
+    80% {
+        margin-top: -0.375em;
+        transform: scale(1.15);
+    }
+    100% {
+        margin-top: 0;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.info-modal-foot {
+    -webkit-tap-highlight-color: transparent;
+    z-index: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 0 1.6em;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    word-wrap: break-word;
+    color: #303441!important;
+    font-size: 15px!important;
+}

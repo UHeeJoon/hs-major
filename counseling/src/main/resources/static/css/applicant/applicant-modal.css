@@ -1,0 +1,267 @@
+@charset "UTF-8";
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalBox {
+    position: absolute;
+    background-color: #fff;
+    width: 95%;
+    aspect-ratio: 16/9;
+    max-width: 400px;
+    border-radius: 24px;
+}
+
+.modalBox button {
+    cursor: pointer;
+    display: block;
+    width: 80%;
+    aspect-ratio:16 / 9;
+    border: none;
+    margin: 0 auto;
+}
+
+.modalBox button:hover {
+    border: 1px solid #a7a7a7;
+    border-radius: 24px;
+}
+
+
+.exit_svg {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    flex-shrink: 0;
+    font-size: 20px;
+}
+
+.modal-title-area{
+    padding: 0px 20px;
+    height: 64px;
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.modal-title-container{
+    display: flex;
+    flex: 1 1 0%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-title-text{
+    text-align: left;
+}
+
+.modal-title{
+    text-align: center;
+    display: flex;
+    flex: 1 1 0%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.modal-white-space{
+    min-width: 64px;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.modal_area{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modal_title_area{
+    padding: 0 20px;
+    height: 64px;
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.modal_white_space{
+    min-width: 64px;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.modal_title_box{
+    display: flex;
+    flex: 1 1 0%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.modal_title{
+    text-align: center;
+    display: flex;
+    flex: 1 1 0%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.modal_title_text{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.exit_svg_area{
+    display: flex;
+    min-width: 64px;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.exit_svg_box{
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 8px;
+    margin: -8px;
+}
+
+.exit_svg_box{
+    fill: inherit;
+}
+.svg_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exit_svg{
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    flex-shrink: 0;
+    font-size: 20px;
+}
+
+.modal_content_area{
+    padding: 0px 20px 20px;
+    height: calc(100% - 64px);
+}
+
+.modal_input_area{
+    height: 60%;
+}
+
+.modal_point_text{
+    display: inline-block;
+    margin: 0px 0px 16px 0px;
+}
+
+.modal_input{
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    padding: 0px 12px;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.modal_button_area{
+    display: flex;
+    justify-content: right;
+    height: 40%;
+}
+
+#modal_point_title{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 0 16px 0;
+}
+
+/* 취소하기 버튼 */
+.cancel_button{
+    height: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: auto;
+    padding: 0px 10px;
+    margin-left: 8px;
+}
+
+.cancel_button span {
+    color: black;
+}
+
+/* 결제하기 버튼 */
+.submit_button{
+    height: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: none;
+    width: auto;
+    padding: 0px 10px;
+    margin-left: 8px;
+}
+
+.submit_button span{
+    color: black;
+
+}
+
+.submit_button:disabled{
+    border: none;
+    cursor: default;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.hanshin.counseling.mapper.member.MemberMapper">
+    <select id="selectEmail" resultType="memberDTO">
+        select id, student_id, member_name, member_email, member_major, number_of_applicant from vi_member
+        where student_id = #{studentID}
+    </select>
+</mapper>

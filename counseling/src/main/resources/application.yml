@@ -1,0 +1,26 @@
+#server
+server:
+  port: 10000
+  servlet:
+    session:
+      tracking-modes: cookie
+
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://3.144.28.87:3306/hs_major
+      username: hs_major
+      password: 1234
+  mail:
+    host: smtp.gmail.com # 1
+    port: 587 # 2
+    username: dbgmlwns@hs.ac.kr # 3
+    password: fueeodffdqtqdpel # 4
+    properties:
+      mail:
+        smtp:
+          auth: true # 5
+          timeout: 5000 # 6
+          starttls:
+            enable: true # 7

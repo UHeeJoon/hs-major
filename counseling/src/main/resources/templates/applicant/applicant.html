@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" style="--vh: 9.23px; --vw: 19.2px; --vw-unitless: 1920; --vw-px: 1920px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>상담 신청</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.hs.ac.kr/favicon/favicon.ico">
+    <link rel="stylesheet" href="/css/applicant/applicant.css">
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/applicant/applicant-modal.css">
+    <link rel="stylesheet" href="/css/login/login_modal.css">
+</head>
+<!--
+
+
+
+
+Created by:
+Yoo Hee-Joon, a senior majoring in information and communication
+
+
+
+
+
+-->
+<body>
+    <div id="main">
+        <div class="header">
+
+            <div class="header-main">
+                <div class="header-title">
+                    <img src="https://www.hs.ac.kr/sites/testPub/images/logo.jpg" alt="">
+                    <div class="student-info">
+                        <span class="student-number" th:text="${session.studentId}"></span>
+                        <span class="student-name" th:text="${session.memberName}"></span>
+                    </div>
+                </div>
+                <div class="header-wrapper">
+                    <div class="header-container">
+<!--                            selected-->
+                        <label th:each="major, i : ${majors}" class="header-scroller">
+                            <input type="radio" name="category" class="category" th:data-id="${major.id}" hidden/>
+                            <div class="category_img_box">
+                                <span class="category_img_area">
+<!--                                        selected-category-img-->
+                                    <img class="category_img" th:src="|/image/major/${session.majorFieldId}/${i.count}.png|" alt="" width="24" height="24">
+                                    <div class="category_text_area">
+                                        <span th:text="${major.major}" class="category_text">
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                        </label>
+
+                    </div>
+
+<!--                    <button class="left_btn">-->
+<!--                        <span>-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">-->
+<!--                                <path fill="none" d="M20 28 8.7 16.7a1 1 0 0 1 0-1.4L20 4"></path>-->
+<!--                            </svg>-->
+<!--                        </span>-->
+<!--                    </button>-->
+<!--                    <button class="right_btn">-->
+<!--                        <span>-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">-->
+<!--                                <path fill="none" d="m12 4 11.3 11.3a1 1 0 0 1 0 1.4L12 28"></path>-->
+<!--                            </svg>-->
+<!--                        </span>-->
+<!--                    </button>-->
+                </div>
+            </div>
+        </div>
+        <div class="main-contents">
+            <div class="main-header">
+                <ul class="date-select">
+                    <li class="date-container">
+                        <button class="date-select-btn" data-applicantDate="9/19">9/19 화요일</button>
+                    </li>
+                    <li class="date-container">
+                        <button class="date-select-btn" data-applicantDate="9/20">9/20 수요일</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-body">
+                <ul>
+                    <h2 style="color: #717171; margin-top: 150px; text-align: center;">데이터를 불러오는 중이에요</h2>
+<!--                    <li class="list-content">-->
+<!--                        <div class="list-wrapper">-->
+<!--                            <div class="list-container">-->
+<!--                                <div class="list-box-1">-->
+<!--                                    <div class="counseling-from">-->
+<!--                                        <span class="counseling-time">09:00</span>-->
+<!--                                    </div>-->
+<!--                                    <div class="counseling-to">-->
+<!--                                        <span class="counseling-time">09:30</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="list-box-2">-->
+<!--                                    <div class="direction">-->
+<!--                                        <span class="duration">30분</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="list-main-wrapper">-->
+<!--                            <div class="list-main-container">-->
+<!--                                <div class="list-main-box">-->
+<!--                                    <div class="list-main">-->
+<!--                                        <label class="list-main-label">-->
+<!--                                            <span class="professor">교수님1</span>-->
+<!--                                            <span class="space-area">&nbsp;</span>-->
+<!--                                            <span class="professor"> 상담 신청하기</span>-->
+<!--                                        </label>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--#3B1C91-->
+    <div class="modal hidden">
+        <div class="modalBox">
+            <div class="modal_title_area">
+                <div class="modal_white_space"></div>
+                <div class="modal_title_box">
+                    <p class="modal_title">
+                        <span class="modal_title_text">상담 예약 하기</span>
+                    </p>
+                </div>
+                <div class="exit_svg_area">
+                    <button type="button" class="closeBtn">
+                        <span class="svg_wrapper">
+                            <svg viewBox="0 0 24 24" class="exit_svg">
+                                <path d="M17.97 19.03a.749.749 0 1 0 1.06-1.06l-6.5-6.5a.749.749 0 0 0-1.06 0l-6.5 6.5a.749.749 0 1 0 1.06 1.06L12 13.06l5.97 5.97zM12 10.94 6.03 4.97a.749.749 0 1 0-1.06 1.06l6.5 6.5a.749.749 0 0 0 1.06 0l6.5-6.5a.749.749 0 1 0-1.06-1.06L12 10.94z"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal_content_area">
+                <form id="modal_form" style="height: 100%" onsubmit="return false;">
+                    <div class="modal_input_area">
+                        <div id="modal_point_title">교수님 이름</div>
+                        <div class="modal_point_text">날짜 : 시간</div>
+                    </div>
+                    <div class="modal_button_area hidden" id="applicant">
+                        <button type="submit" class="submit_button">
+                            <span class="button_text">신청</span>
+                        </button>
+                        <button type="button" class="cancel_button">
+                            <span class="button_text ">취소</span>
+                        </button>
+                    </div>
+                    <div class="modal_button_area hidden" id="cancel">
+                        <button type="submit" class="submit_button">
+                            <span class="button_text">예</span>
+                        </button>
+                        <button type="button" class="cancel_button">
+                            <span class="button_text ">아니요</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="info-modal" style="display: none;" >
+        <div class="info-modal-area" role="dialog">
+            <div class="info-modal-main">
+                <div class="info-modal-icon-box">
+                    <span class="info-modal-icon-body">
+                    </span>
+                </div>
+                <h2 class="info-modal-title"></h2>
+            </div>
+            <div class="info-modal-foot">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script th:inline="javascript">
+    const majors = [[${majors}]];
+    let myApplicantList = [[${myApplicantList}]];
+    let majorId = majors[0].id;
+    let applicantDate = '9/19';
+    const applicantList = document.querySelector('.main-body>ul');
+</script>
+<script src="/js/login/login_modal.js"></script>
+<script src="/js/applicant/applicant.js"></script>
+<script src="/js/applicant/initDatas.js"></script>
+<script src="/js/applicant/buttonEvent.js"></script>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.hanshin.counseling.mapper.applicant.MemberApplicantListMapper">
+
+    <insert id="insert">
+        insert into tbl_member_applicant_list(member_id, applicant_id) values(#{memberId}, #{applicantId})
+    </insert>
+
+    <select id="select" resultType="memberApplicantListVO">
+        select id, member_id, applicant_id from vi_member_applicant_list where member_id = #{memberId}
+    </select>
+
+    <select id="selectMine" resultType="myApplicantListDTO">
+        select
+            tp.id applicant_id, tp.professor_id, tt.id time_id, tp.applicant_date
+        from
+            tbl_time tt
+                join
+            (	select
+                     ta.id, ta.time_id, ta.professor_id, ta.applicant_date
+                 from
+                     tbl_applicant ta
+                 where ta.id in ((select applicant_id from tbl_member_applicant_list tmal where member_id = #{memberId}))
+            ) tp
+            ON
+                tt.id  = tp.time_id
+    </select>
+
+    <delete id="delete">
+        delete from tbl_member_applicant_list where member_id = #{memberId} and applicant_id = #{applicantId};
+    </delete>
+</mapper>

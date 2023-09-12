@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.hanshin.counseling.mapper.applicant.ApplicantMapper">
+
+    <select id="selectAll" resultType="majorDTO">
+        select id, major from tbl_major
+        where major_field_id = #{majorFieldId}
+        order by id
+    </select>
+
+    <select id="select" resultType="applicantDTO">
+        select
+            ta.id, pp.professor_name, pp.id professor_id, tt.time_start , tt.time_end, tt.id time_id, ta.number_of_applicant
+        from
+            ((select
+                  tp.id, tp.professor_name
+              from
+                  tbl_professor tp
+              where tp.major_id = #{majorId}) pp
+            join
+            tbl_applicant ta
+            on pp.id = ta.professor_id )
+            join
+            tbl_time tt
+            on ta.time_id = tt.id
+        where
+            ta.applicant_date = #{applicantDate}
+        order by time_start
+    </select>
+
+
+</mapper>

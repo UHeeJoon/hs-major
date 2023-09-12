@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.hanshin.counseling.mapper.FileReadMapper">
+    <insert id="insert">
+        insert into tbl_applicant(applicant_date, time_id, professor_id)
+        values(#{applicantDate}, (select id from tbl_time where time_start = #{timeStart}), (select id from tbl_professor where professor_name = #{professorName} and (select major from tbl_major where id = major_id) = #{major}))
+    </insert>
+
+    <insert id="insertProfessor">
+        insert into tbl_professor(major_id, professor_name) values ((select id from tbl_major where major = #{major}) ,#{professorName})
+    </insert>
+</mapper>

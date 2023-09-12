@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.app.hanshin.counseling.vo.major.MajorDTO" alias="majorDTO"/>
+        <typeAlias type="com.app.hanshin.counseling.vo.member.MemberDTO" alias="memberDTO" />
+        <typeAlias type="com.app.hanshin.counseling.vo.applicant.ApplicantDTO" alias="applicantDTO"/>
+        <typeAlias type="com.app.hanshin.counseling.vo.applicant.MemberApplicantListVO" alias="memberApplicantListVO"/>
+        <typeAlias type="com.app.hanshin.counseling.vo.applicant.MyApplicantListDTO" alias="myApplicantListDTO"/>
+    </typeAliases>
+
+</configuration>

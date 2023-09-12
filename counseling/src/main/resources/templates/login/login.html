@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로그인</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.hs.ac.kr/favicon/favicon.ico">
+    <link rel="stylesheet" href="/css/login/login.css">
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/login/login_modal.css">
+</head>
+<body>
+    <form id="form" onsubmit="return false;">
+        <div style="text-align: center">
+            <img src="/image/header_663_95.png" width="380px" alt="">
+        </div>
+        <div class="login-box">
+            <div class="login-header">
+                <img src="/image/logo_1810_2000.png" width="181" height="200" alt="">
+                <header>로그인</header>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="학번을 입력하세요" autocomplete="off" required>
+                <p class="error"></p>
+            </div>
+            <div class="input-submit">
+                <button class="submit-btn" id="submitBtn">인증번호 받기</button>
+            </div>
+        </div>
+    </form>
+    <div class="loader loader-hidden">
+    </div>
+    <div class="info-modal" style="display: none;" >
+        <div class="info-modal-area" role="dialog">
+            <div class="info-modal-main">
+                <div class="info-modal-icon-box">
+                    <span class="info-modal-icon-body">
+                    </span>
+                </div>
+                <h2 class="info-modal-title"></h2>
+            </div>
+            <div class="info-modal-foot">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/login/login_modal.js"></script>
+<script src="/js/login/login.js"></script>
+<script th:inline="javascript">
+</script>
+</html>
